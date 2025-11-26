@@ -1,10 +1,12 @@
+import path from 'path';
+
 export default ({ env }) => {
-  const client = env('DATABASE_CLIENT', 'sqlite'); // Asegúrate que en Render uses 'postgres'
+  const client = env('DATABASE_CLIENT', 'postgres');
 
   const connections = {
     postgres: {
       connection: {
-        connectionString: env('DATABASE_URL'), // la URL completa de Render aquí
+        connectionString: env('DATABASE_URL'),
         ssl: {
           rejectUnauthorized: false,
         },
@@ -14,7 +16,12 @@ export default ({ env }) => {
         max: env.int('DATABASE_POOL_MAX', 10),
       },
     },
-    // otras configuraciones...
+    sqlite: {
+      connection: {
+        filename: path.join(__dirname, '..', '..', env('DATABASE_FILENAME', '.tmp/data.db')),
+      },
+      useNullAsDefault: true,
+    }
   };
 
   return {
