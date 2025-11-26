@@ -4,7 +4,7 @@ export default ({ env }) => {
   const connections = {
     postgres: {
       connection: {
-        connectionString: env('postgresql://strapi_nails_user:EWF883J2smpCf7V6vs20RC834rVRDusw@dpg-d4jjtp8dl3ps73ehn240-a.oregon-postgres.render.com/strapi_nails'), // la URL completa de Render aquí
+        connectionString: env('DATABASE_URL'), // la URL completa de Render aquí
         ssl: {
           rejectUnauthorized: false,
         },
