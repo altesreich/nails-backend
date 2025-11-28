@@ -1,19 +1,12 @@
-export default {
-  enabled: true,
-  origin: [
-    'https://nails-zeta.vercel.app',
-    'http://localhost:3000',
-    'http://localhost:3001'
-  ],
-  headers: [
-    'Content-Type',
-    'Authorization',
-    'Origin',
-    'Accept',
-    'X-Requested-With'
-  ],
-  methods: [
-    'GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'
-  ],
-  keepHeaderOnError: true,
-};
+export default [
+  'strapi::logger',
+  'strapi::errors',
+  'strapi::security',
+  'strapi::cors',
+  'strapi::poweredBy',
+  'strapi::query',
+  'strapi::body',
+  'strapi::session',
+  'strapi::favicon',
+  'strapi::public',
+];
