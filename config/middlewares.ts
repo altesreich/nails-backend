@@ -17,28 +17,12 @@ export default [
   {
     name: 'strapi::cors',
     config: {
-      enabled: true,
       origin: [
         'https://nails-zeta.vercel.app',
-        'http://localhost:3000',
-        'http://localhost:3001'
+        'http://localhost:3000'
       ],
-      headers: [
-        'Content-Type', 
-        'Authorization', 
-        'Origin', 
-        'Accept', 
-        'X-Requested-With'
-      ],
-      methods: [
-        'GET', 
-        'POST', 
-        'PUT', 
-        'PATCH', 
-        'DELETE', 
-        'HEAD', 
-        'OPTIONS'
-      ],
+      methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+      headers: ['Content-Type', 'Authorization'],
       keepHeaderOnError: true,
     },
   },
